@@ -1,12 +1,15 @@
+"use client"
 import Head from "next/head";
-import React from "react";
+import { FC, memo, ReactNode } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer"; 
 interface IProps{
     title: string;
-    children: React.ReactNode;
+    children: ReactNode;
     description?: string;
     keywords?: string;
 }
-const MainLayout:React.FC<IProps> = React.memo(({title, children, description, keywords}):JSX.Element => {
+const MainLayout:FC<IProps> = memo(({title, children, description, keywords}):JSX.Element => {
     return (
         <>  
         <Head>
@@ -15,13 +18,13 @@ const MainLayout:React.FC<IProps> = React.memo(({title, children, description, k
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="description" content={`DealyBook-це ідеальний сервіс для зберігання важливої інформації. ${description ? description : ''}`} />
             <meta name="keywords" content={`DealyBook, конспект, зберігання, сховище ${keywords ? ',' + keywords : ''}`} />
-            <title>DealyBook-{title}</title>
+            <title>{"DealyBook-" + title}</title>
         </Head>
-        <header></header>
+        <Header />
         <main className="page">
             {children}
         </main>
-        <footer></footer>
+        <Footer />
         </>
 )
 });

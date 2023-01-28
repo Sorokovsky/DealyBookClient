@@ -4,7 +4,6 @@ import MainLayout from '@/components/MainLayout';
  const Home:NextPage = React.memo(():JSX.Element => {
   return (
     <MainLayout title='Головна'>
-      
     </MainLayout>
   )
 })
