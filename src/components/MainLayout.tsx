@@ -16,8 +16,12 @@ const MainLayout:React.FC<IProps> = React.memo(({title, children, description, k
             <meta name="description" content={`DealyBook-це ідеальний сервіс для зберігання важливої інформації. ${description ? description : ''}`} />
             <meta name="keywords" content={`DealyBook, конспект, зберігання, сховище ${keywords ? ',' + keywords : ''}`} />
             <title>DealyBook-{title}</title>
-        </Head> 
-        {children}
+        </Head>
+        <header></header>
+        <main className="page">
+            {children}
+        </main>
+        <footer></footer>
         </>
 )
 });
