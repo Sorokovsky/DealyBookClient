@@ -1,15 +1,14 @@
 import { FC, memo } from "react";
 import styles from "@/styles/Header.module.sass";
-import Image from "next/image";
+import avatar from "@/assets/avatar.svg";
 import logo from "@/assets/logo.svg";
-import Link from "next/link";
+import Logo from "@/components/Logo";
 const Header:FC = memo(():JSX.Element => {
     return (
     <header className={styles.header}>
         <div className={["container", styles.container].join(" ")}>
-            <Link href={"/"} className={styles.logo}>
-                <Image src={logo} alt="DealyBook" priority/>
-            </Link>
+            <Logo href="/" src={logo}/>
+            <Logo href="#" src={avatar} callback={() => {}}/>
         </div>
     </header>
     )
