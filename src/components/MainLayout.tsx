@@ -3,6 +3,7 @@ import Head from "next/head";
 import { FC, memo, ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"; 
+import Sidebar from "./Sidebar";
 interface IProps{
     title: string;
     children: ReactNode;
@@ -22,6 +23,8 @@ const MainLayout:FC<IProps> = memo(({title, children, description, keywords}):JS
         </Head>
         <Header />
         <main className="page">
+            <Sidebar>
+            </Sidebar>
             {children}
         </main>
         <Footer />
