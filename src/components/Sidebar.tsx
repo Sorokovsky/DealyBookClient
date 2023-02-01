@@ -4,11 +4,15 @@ import { SidePosition } from "@/types/sidebar";
 interface IProps{
     children: ReactNode;
     position: SidePosition;
+    show?: boolean;
 }
-const Sidebar:FC<IProps> = memo(({children, position}):JSX.Element => {
+const Sidebar:FC<IProps> = memo(({children, position, show = true}):JSX.Element => {
+    if (!show) {
+        return <></>
+    }
     return (
-        <aside className={[styles.sidebar].join(" ")}>
-            {children}
+        <aside className={[styles.sidebar, styles[position]].join(" ")}>
+            <div className={styles.container}>{children}</div>
         </aside>
     )
 });

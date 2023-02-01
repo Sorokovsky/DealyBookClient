@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer"; 
 import Sidebar from "./Sidebar";
 import { SidePosition } from "@/types/sidebar";
+import Button from "@/components/ui/Button";
 interface IProps{
     title: string;
     children: ReactNode;
@@ -25,8 +26,11 @@ const MainLayout:FC<IProps> = memo(({title, children, description, keywords}):JS
         <Header />
         <main className="page">
             <Sidebar position={SidePosition.LEFT}>
+                <Button clickHandler={() => {}}>New Folder</Button>
             </Sidebar>
-            {children}
+            <div className="container">{children}</div>
+            <Sidebar position={SidePosition.RIGHT}>
+            </Sidebar>
         </main>
         <Footer />
         </>
