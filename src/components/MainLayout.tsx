@@ -4,6 +4,7 @@ import { FC, memo, ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"; 
 import Sidebar from "./Sidebar";
+import { SidePosition } from "@/types/sidebar";
 interface IProps{
     title: string;
     children: ReactNode;
@@ -23,7 +24,7 @@ const MainLayout:FC<IProps> = memo(({title, children, description, keywords}):JS
         </Head>
         <Header />
         <main className="page">
-            <Sidebar>
+            <Sidebar position={SidePosition.LEFT}>
             </Sidebar>
             {children}
         </main>
