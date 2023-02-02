@@ -12,7 +12,7 @@ const Sidebar:FC<IProps> = memo(({children, position, show = true}):JSX.Element 
     }
     return (
         <aside className={[styles.sidebar, styles[position]].join(" ")}>
-            <div className={styles.container}>{children}</div>
+            {children}
         </aside>
     )
 });

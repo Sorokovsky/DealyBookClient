@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Sidebar from "./Sidebar";
 import { SidePosition } from "@/types/sidebar";
 import Button from "@/components/ui/Button";
+import { useRouter } from 'next/navigation';
 interface IProps{
     title: string;
     children: ReactNode;
@@ -13,6 +14,7 @@ interface IProps{
     keywords?: string;
 }
 const MainLayout:FC<IProps> = memo(({title, children, description, keywords}):JSX.Element => {
+    const router = useRouter();
     return (
         <>  
         <Head>
@@ -26,7 +28,7 @@ const MainLayout:FC<IProps> = memo(({title, children, description, keywords}):JS
         <Header />
         <main className="page">
             <Sidebar position={SidePosition.LEFT}>
-                <Button clickHandler={() => {}}>New Folder</Button>
+                <Button clickHandler={() => {router.push('/client')}}>Нова папка</Button>
             </Sidebar>
             <div className="container">{children}</div>
             <Sidebar position={SidePosition.RIGHT}>
