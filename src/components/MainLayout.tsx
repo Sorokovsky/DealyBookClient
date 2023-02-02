@@ -26,7 +26,7 @@ const MainLayout:FC<IProps> = memo(({title, children, description, keywords}):JS
         <Header />
         <main className="page">
             <Sidebar position={SidePosition.LEFT}>
-                <MyLink href="/new">Нова папка</MyLink>
+                <MyLink href="/folder/new">Нова папка</MyLink>
             </Sidebar>
             <div className="container">{children}</div>
             <Sidebar position={SidePosition.RIGHT}>
