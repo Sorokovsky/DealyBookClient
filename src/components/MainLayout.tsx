@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer"; 
 import Sidebar from "./Sidebar";
 import { SidePosition } from "@/types/sidebar";
-import { useRouter } from 'next/navigation';
 import MyLink from "@/components/ui/MyLink";
 interface IProps{
     title: string;
@@ -14,7 +13,6 @@ interface IProps{
     keywords?: string;
 }
 const MainLayout:FC<IProps> = memo(({title, children, description, keywords}):JSX.Element => {
-    const router = useRouter();
     return (
         <>  
         <Head>
